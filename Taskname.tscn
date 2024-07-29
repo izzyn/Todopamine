@@ -1,0 +1,40 @@
+[gd_scene load_steps=6 format=3 uid="uid://kaa2pkxs8pn3"]
+
+[ext_resource type="Texture2D" uid="uid://otaobaxbpkfd" path="res://red-trash-can-icon.png" id="1_jnhnu"]
+[ext_resource type="Theme" uid="uid://c5m21a2q8faf" path="res://Buttontheme.tres" id="1_kkujq"]
+[ext_resource type="Script" path="res://Size.gd" id="2_e6c8k"]
+[ext_resource type="Texture2D" uid="uid://cd0xj5qk8y61r" path="res://Cogwheel.png" id="4_w8blu"]
+[ext_resource type="Script" path="res://Settingsbutton.gd" id="5_h213g"]
+
+[node name="MarginContainer" type="MarginContainer"]
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 8.0
+grow_horizontal = 2
+
+[node name="Taskname" type="HBoxContainer" parent="."]
+layout_mode = 2
+size_flags_vertical = 0
+
+[node name="Button" type="Button" parent="Taskname"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("1_kkujq")
+text = "Whast"
+alignment = 0
+
+[node name="Button3" type="Button" parent="Taskname"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+icon = ExtResource("1_jnhnu")
+expand_icon = true
+script = ExtResource("2_e6c8k")
+
+[node name="Button2" type="Button" parent="Taskname"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+icon = ExtResource("4_w8blu")
+expand_icon = true
+script = ExtResource("5_h213g")

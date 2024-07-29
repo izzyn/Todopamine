@@ -1,0 +1,158 @@
+[gd_scene load_steps=8 format=3 uid="uid://brl3ixt23ps88"]
+
+[ext_resource type="LabelSettings" uid="uid://c4q8yv20ox6r8" path="res://Label.tres" id="1_1gn4d"]
+[ext_resource type="Script" path="res://Difficulty_label.gd" id="2_8pw2a"]
+[ext_resource type="Script" path="res://Difficultybutton.gd" id="2_hwshk"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_f8w28"]
+font_size = 32
+
+[sub_resource type="LabelSettings" id="LabelSettings_nnka8"]
+font_size = 20
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yaug0"]
+bg_color = Color(0, 0.475402, 0.0765349, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6r3pk"]
+bg_color = Color(0.578486, 0, 0.0325872, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[node name="MarginContainer" type="MarginContainer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 5
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 2
+theme_override_constants/separation = 20
+
+[node name="Label" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+text = "Create new task!"
+label_settings = SubResource("LabelSettings_f8w28")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
+text = "Name:"
+label_settings = ExtResource("1_1gn4d")
+
+[node name="LineEdit" type="LineEdit" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 5
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+text = "Difficulty:"
+label_settings = ExtResource("1_1gn4d")
+
+[node name="Difficulty_label" type="Label" parent="VBoxContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.328183, 0.330785, 0.843869, 1)
+text = "None"
+label_settings = SubResource("LabelSettings_nnka8")
+script = ExtResource("2_8pw2a")
+
+[node name="Easy" type="Button" parent="VBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.180392, 1, 0.309804, 1)
+text = "Easy"
+alignment = 0
+script = ExtResource("2_hwshk")
+
+[node name="Medium" type="Button" parent="VBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.890747, 0.864367, 3.85046e-06, 1)
+text = "Medium"
+alignment = 0
+script = ExtResource("2_hwshk")
+
+[node name="Challenging" type="Button" parent="VBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.867971, 0.346933, 0, 1)
+text = "Challenging"
+alignment = 0
+script = ExtResource("2_hwshk")
+
+[node name="Hard" type="Button" parent="VBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0, 0.0666666, 1)
+text = "Hard"
+alignment = 0
+script = ExtResource("2_hwshk")
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+text = "Frequency:"
+label_settings = ExtResource("1_1gn4d")
+
+[node name="OptionButton" type="OptionButton" parent="VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+item_count = 6
+selected = 5
+popup/item_0/text = "Daily"
+popup/item_0/id = 0
+popup/item_1/text = "Only Weekdays"
+popup/item_1/id = 1
+popup/item_2/text = "Only Weekends"
+popup/item_2/id = 2
+popup/item_3/text = "Weekly"
+popup/item_3/id = 3
+popup/item_4/text = "Monthly"
+popup/item_4/id = 4
+popup/item_5/text = "Once in a blue moon"
+popup/item_5/id = 6
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 2
+size_flags_vertical = 8
+alignment = 1
+
+[node name="Button3" type="Button" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_font_sizes/font_size = 20
+theme_override_styles/normal = SubResource("StyleBoxFlat_yaug0")
+theme_override_styles/hover = SubResource("StyleBoxFlat_yaug0")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_yaug0")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_yaug0")
+theme_override_styles/focus = SubResource("StyleBoxFlat_yaug0")
+text = "Confirm"
+
+[node name="Button" type="Button" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_font_sizes/font_size = 20
+theme_override_styles/normal = SubResource("StyleBoxFlat_6r3pk")
+theme_override_styles/hover = SubResource("StyleBoxFlat_6r3pk")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_6r3pk")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_6r3pk")
+theme_override_styles/focus = SubResource("StyleBoxFlat_6r3pk")
+text = "Cancel"
