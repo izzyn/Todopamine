@@ -16,6 +16,8 @@ var chal_color : Color
 @export
 var hard_color : Color
 
+var editing : Task 
+
 var player_data : PlayerData = PlayerData.new()
 var task_manager : TaskManager = TaskManager.new()
 
@@ -65,8 +67,9 @@ func load_task(data):
 
 func save():
 	
-	var key = get_key()
-	var file = FileAccess.open_encrypted_with_pass(SAVE_FILE_NAME, FileAccess.WRITE, key)
+	#var key = get_key()
+	#var file = FileAccess.open_encrypted_with_pass(SAVE_FILE_NAME, FileAccess.WRITE, key)
+	var file = FileAccess.open(SAVE_FILE_NAME, FileAccess.WRITE)
 	if file == null:
 		print(FileAccess.get_open_error())
 		return
@@ -104,12 +107,13 @@ func save():
 	pass
 	
 func load_data():
-	var key = get_key()
+	#var key = get_key()
 	if not FileAccess.file_exists(SAVE_FILE_NAME):
 		print("No save file exists :(")
 		return
 	
-	var file = FileAccess.open_encrypted_with_pass(SAVE_FILE_NAME, FileAccess.READ, key)
+	#var file = FileAccess.open_encrypted_with_pass(SAVE_FILE_NAME, FileAccess.READ, key)
+	var file = FileAccess.open(SAVE_FILE_NAME, FileAccess.READ)
 	if file == null:
 		print(FileAccess.get_open_error())
 		return

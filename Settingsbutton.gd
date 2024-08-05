@@ -12,3 +12,8 @@ func _process(delta):
 	position = sibling.position
 	position.x += size.x + 5
 	pass
+
+func _pressed():
+	var task = get_node("../Button").task
+	Globals.editing = task
+	get_tree().change_scene_to_file("res://Newtask.tscn")

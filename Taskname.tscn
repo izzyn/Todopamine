@@ -1,7 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://kaa2pkxs8pn3"]
+[gd_scene load_steps=7 format=3 uid="uid://kaa2pkxs8pn3"]
 
 [ext_resource type="Texture2D" uid="uid://otaobaxbpkfd" path="res://red-trash-can-icon.png" id="1_jnhnu"]
 [ext_resource type="Theme" uid="uid://c5m21a2q8faf" path="res://Buttontheme.tres" id="1_kkujq"]
+[ext_resource type="Script" path="res://Taskbutton.gd" id="2_610h3"]
 [ext_resource type="Script" path="res://Size.gd" id="2_e6c8k"]
 [ext_resource type="Texture2D" uid="uid://cd0xj5qk8y61r" path="res://Cogwheel.png" id="4_w8blu"]
 [ext_resource type="Script" path="res://Settingsbutton.gd" id="5_h213g"]
@@ -22,6 +23,7 @@ size_flags_horizontal = 3
 theme = ExtResource("1_kkujq")
 text = "Whast"
 alignment = 0
+script = ExtResource("2_610h3")
 
 [node name="Button3" type="Button" parent="Taskname"]
 layout_mode = 2

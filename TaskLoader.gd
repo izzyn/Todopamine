@@ -10,6 +10,7 @@ func _ready():
 		var task = preload("res://Taskname.tscn").instantiate()
 		task.get_node("Taskname/Button").text = t.name
 		var button = task.get_node("Taskname/Button")
+		button.task = t
 		match t.difficulty:
 			0:
 				button.add_theme_color_override("font_color", Globals.easy_color)
