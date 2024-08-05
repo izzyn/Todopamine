@@ -1,8 +1,10 @@
-[gd_scene load_steps=8 format=3 uid="uid://brl3ixt23ps88"]
+[gd_scene load_steps=10 format=3 uid="uid://brl3ixt23ps88"]
 
 [ext_resource type="LabelSettings" uid="uid://c4q8yv20ox6r8" path="res://Label.tres" id="1_1gn4d"]
 [ext_resource type="Script" path="res://Difficulty_label.gd" id="2_8pw2a"]
 [ext_resource type="Script" path="res://Difficultybutton.gd" id="2_hwshk"]
+[ext_resource type="Script" path="res://Confirmtaskbutton.gd" id="4_3f33a"]
+[ext_resource type="Script" path="res://Cancelbutton.gd" id="5_v0n4i"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_f8w28"]
 font_size = 32
@@ -144,6 +146,7 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_yaug0")
 theme_override_styles/disabled = SubResource("StyleBoxFlat_yaug0")
 theme_override_styles/focus = SubResource("StyleBoxFlat_yaug0")
 text = "Confirm"
+script = ExtResource("4_3f33a")
 
 [node name="Button" type="Button" parent="HBoxContainer"]
 layout_mode = 2
@@ -156,3 +159,4 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_6r3pk")
 theme_override_styles/disabled = SubResource("StyleBoxFlat_6r3pk")
 theme_override_styles/focus = SubResource("StyleBoxFlat_6r3pk")
 text = "Cancel"
+script = ExtResource("5_v0n4i")

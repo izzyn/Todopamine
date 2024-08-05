@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://c5bwxbmpuw366"]
+[gd_scene load_steps=5 format=3 uid="uid://c5bwxbmpuw366"]
 
 [ext_resource type="Theme" uid="uid://c5m21a2q8faf" path="res://Buttontheme.tres" id="1_dldxu"]
 [ext_resource type="LabelSettings" uid="uid://dsj8lcax6rem7" path="res://Separatorlabel.tres" id="1_lv6yo"]
-[ext_resource type="PackedScene" uid="uid://kaa2pkxs8pn3" path="res://Taskname.tscn" id="1_wv4nj"]
+[ext_resource type="Script" path="res://Newtaskbutton.gd" id="2_wq7a2"]
+[ext_resource type="Script" path="res://TaskLoader.gd" id="3_njsod"]
 
 [node name="MarginContainer" type="MarginContainer"]
 anchors_preset = 15
@@ -46,53 +47,46 @@ text = "Shop"
 layout_mode = 2
 theme = ExtResource("1_dldxu")
 text = "New Task"
+script = ExtResource("2_wq7a2")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer"]
+[node name="Tasks" type="VBoxContainer" parent="VBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 0
 theme_override_constants/separation = 20
+script = ExtResource("3_njsod")
 
-[node name="VBoxContainer4" type="VBoxContainer" parent="VBoxContainer/VBoxContainer"]
+[node name="Daily" type="VBoxContainer" parent="VBoxContainer/Tasks"]
 layout_mode = 2
 
-[node name="Label" type="Label" parent="VBoxContainer/VBoxContainer/VBoxContainer4"]
+[node name="Label" type="Label" parent="VBoxContainer/Tasks/Daily"]
 layout_mode = 2
 text = "Daily"
 label_settings = ExtResource("1_lv6yo")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/VBoxContainer/VBoxContainer4"]
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/Tasks/Daily"]
 layout_mode = 2
 size_flags_horizontal = 0
 
-[node name="Taskname" parent="VBoxContainer/VBoxContainer/VBoxContainer4/VBoxContainer" instance=ExtResource("1_wv4nj")]
+[node name="Weekly" type="VBoxContainer" parent="VBoxContainer/Tasks"]
 layout_mode = 2
 
-[node name="VBoxContainer6" type="VBoxContainer" parent="VBoxContainer/VBoxContainer"]
-layout_mode = 2
-
-[node name="Label" type="Label" parent="VBoxContainer/VBoxContainer/VBoxContainer6"]
+[node name="Label" type="Label" parent="VBoxContainer/Tasks/Weekly"]
 layout_mode = 2
 text = "Weekly"
 label_settings = ExtResource("1_lv6yo")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/VBoxContainer/VBoxContainer6"]
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/Tasks/Weekly"]
 layout_mode = 2
 size_flags_horizontal = 0
 
-[node name="Taskname" parent="VBoxContainer/VBoxContainer/VBoxContainer6/VBoxContainer" instance=ExtResource("1_wv4nj")]
+[node name="Monthly" type="VBoxContainer" parent="VBoxContainer/Tasks"]
 layout_mode = 2
 
-[node name="VBoxContainer5" type="VBoxContainer" parent="VBoxContainer/VBoxContainer"]
-layout_mode = 2
-
-[node name="Label" type="Label" parent="VBoxContainer/VBoxContainer/VBoxContainer5"]
+[node name="Label" type="Label" parent="VBoxContainer/Tasks/Monthly"]
 layout_mode = 2
 text = "Monthly"
 label_settings = ExtResource("1_lv6yo")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/VBoxContainer/VBoxContainer5"]
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/Tasks/Monthly"]
 layout_mode = 2
 size_flags_horizontal = 0
-
-[node name="Taskname" parent="VBoxContainer/VBoxContainer/VBoxContainer5/VBoxContainer" instance=ExtResource("1_wv4nj")]
-layout_mode = 2
